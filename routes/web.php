@@ -33,6 +33,25 @@ Route::delete('/{id}', [StudentController::class,'destroy'])->name('destroy');
 
 
 });
+//teacher
+Route::name('teachers.')->prefix('teachers')->group(function () {
+
+Route::get('/', [TeacherController::class,'index'])->name('index');
+
+Route::get('/{id}', [TeacherController::class,'show'])->name('show');
+
+Route::get('/create', [TeacherController::class,'create'])->name('create');
+
+Route::get('/{id}/edit', [TeacherController::class,'edit'])->name('edit');
+
+Route::post('/', [TeacherController::class,'store'])->name('store');
+
+Route::put('/{id}', [TeacherController::class,'update'])->name('update');
+
+Route::delete('/{id}', [TeacherController::class,'destroy'])->name('destroy');
+
+
+});
 
 Route::name('classes.')->prefix('classes')->group(function () {
 
