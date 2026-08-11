@@ -6,40 +6,75 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
-       public function index() {
-
-    return "Ini adalah halaman daftar guru";
-
-    }
-
-    public function show(string$id)
+    public function index()
     {
-        return "Menampilkan detail guru dengan ID: {$id}";
+
+        $title = "Sistem Sekolah - Daftar Guru";
+        $teachers = [
+            [
+                'id' => 1,
+                'nip' => '198501012024',
+                'name' => 'Budi Santoso',
+                'gender' => 'Laki-Laki',
+                'subject' => 'Akuntansi Dasar',
+                'phone_number' => '081234560001',
+                'status' => 'Aktif',
+            ],
+            [
+                'id' => 2,
+                'nip' => '198703152024',
+                'name' => 'Siti Aminah',
+                'gender' => 'Perempuan',
+                'subject' => 'Jaringan Komputer',
+                'phone_number' => '081234560002',
+                'status' => 'Aktif',
+            ],
+        ];
+        return view('teachers.index', [
+            'title' => $title,
+            'teachers' => $teachers
+        ]);
+
+
     }
 
-    public function create() {
-
-    return "Menampilkan halaman tambah guru";
-
-    }
-
-    public function edit(string$id)
+    public function show(string $id)
     {
-        return "Ini adalah halaman edit guru dengan ID: {$id}";
+        $title = "Sistem Sekolah - Halaman Guru";
+        return view('teachers.show', [
+            'title' => $title
+        ]);
     }
 
-    public function store ()
+    public function create()
+    {
+
+        $title = "Sistem Sekolah - Tambah Guru";
+        return view('teachers.create', [
+            'title' => $title
+        ]);
+
+    }
+
+    public function edit(string $id)
+    {
+        $title = "Sistem Sekolah - Edit Guru";
+        return view('teachers.edit', [
+            'title' => $title
+        ]);
+    }
+
+    public function store()
     {
         return "Menambah data guru baru";
     }
 
-    public function update (string$id)
-
+    public function update(string $id)
     {
-      return "Mengubah data guru dengan ID: {$id}";
+        return "Mengubah data guru dengan ID: {$id}";
     }
 
-    public function destroy (string $id)
+    public function destroy(string $id)
     {
         return "Menghapus data guru dengan ID: {$id}";
     }

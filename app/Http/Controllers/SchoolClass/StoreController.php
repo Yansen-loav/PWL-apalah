@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\SchoolClassController;
+namespace App\Http\Controllers\SchoolClass;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CreateController extends Controller
+class StoreController extends Controller
 {
     /**
      * Handle the incoming request.
      */
     public function __invoke(Request $request)
     {
-        return "Menampilkan halaman tambah siswa";
+        return "Melakukan penambahan data siswa";
     }
 }
