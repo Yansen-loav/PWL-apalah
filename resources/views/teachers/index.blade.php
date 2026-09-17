@@ -4,9 +4,6 @@
 
 @section('content')
 
-<x-alert type="WARNING">
-    Terdapat kesalahan ketika menambahkan data guru baru kedalam sistem
-</x-alert>
 <div class="mb-8 flex items-end justify-between border-b border-[#E5E3DB] pb-5">
             <div>
                 <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Tahun Ajaran 2025/2026</p>
@@ -52,9 +49,7 @@
                         <td class="px-5 py-4">
                             {{ $teacher['phone_number'] }}
                         </td>
-                        <td class="px-5 py-4">
-                            {{ $teacher['status'] }}
-                        </td>
+                        <td class="px-5 py-4"><x-status-badge :status="$teacher['status']" /></td>
                         <td class="px-5 py-4">
                             <div class="flex justify-end gap-4 text-xs font-medium">
                                 <a href="{{ route('teachers.show', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>

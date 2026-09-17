@@ -12,7 +12,7 @@
                 <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Tahun Ajaran 2025/2026</p>
                 <h1 class="font-display text-3xl font-semibold text-[#16213A]">Daftar Jurusan</h1>
             </div>
-            <a href="" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
+            <a href="{{ route('majors.create') }}" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
                 Catat Jurusan Baru
             </a>
         </div>
@@ -21,9 +21,21 @@
             <table class="w-full text-left text-sm">
                 <thead>
                     <tr class="border-b border-[#16213A] text-[11px] uppercase tracking-[0.15em] text-[#16213A]">
-                        <th class="w-14 px-5 py-3.5 font-semibold">Kode Jurusan</th>
-                        <th class="px-5 py-3.5 font-semibold">Nama Jurusan</th>
-                        <th class="px-5 py-3.5 font-semibold">Deskripsi</th>
+                         <th class="w-14 px-5 py-3.5 font-semibold">
+                    No.
+                </th>
+                <th class="px-5 py-3.5 font-semibold">
+                    Kode
+                </th>
+                <th class="px-5 py-3.5 font-semibold">
+                    Nama Jurusan
+                </th>
+                <th class="px-5 py-3.5 font-semibold">
+                    Deskripsi
+                </th>
+                <th class="px-5 py-3.5 text-right font-semibold">
+                    Tindakan
+                </th>
                     </tr>
                 </thead>
                 <tbody>

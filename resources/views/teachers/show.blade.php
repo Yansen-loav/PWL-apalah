@@ -38,6 +38,15 @@
                     <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Phone Number</dt>
                     <dd class="font-medium text-[#16213A]">081234560001</dd>
                 </div>
+                <div class="flex justify-between px-8 py-5">
+
+            <dt class="font-medium text-slate-500">
+                Status
+            </dt>
+
+            <dd>
+                <x-status-badge status="Aktif" />
+            </dd>
             </dl>
 
             <div class="flex justify-end gap-4 border-t border-[#E5E3DB] px-8 py-5">

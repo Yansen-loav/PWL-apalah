@@ -13,15 +13,14 @@
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
 
         <div>
-            <label for="nip" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Contoh:
-                198501012024</label>
+            <label for="nip" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIP</label>
             <input type="text" id="nip" name="nip" placeholder="Contoh: 198501012024"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
         <div>
             <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
-                lengkap gurup</label>
+                lengkap guru</label>
             <input type="text" id="name" name="name" placeholder="Nama lengkap guru"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
@@ -46,8 +45,7 @@
 
         <div>
             <label for="phone_number"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Contoh:
-                08123456789</label>
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nomor Telepon</label>
             <input type="text" id="phone_number" name="phone_number" placeholder="Contoh: 08123456789"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
