@@ -9,22 +9,9 @@ class StudentController extends Controller
     public function index() 
     {
     $title = "Sistem Sekolah - Daftar Siswa";
-    $students = [
-    [
-        'id' => 1,
-        'nis' => '1001',
-        'name' => 'Han Yoil',
-        'class' => 'Idol Trainer',
-        'major' => 'Singing'
-    ],
-        [
-        'id' => 2,
-        'nis' => '1002',
-        'name' => 'Lee Ruha',
-        'class' => 'Idol',
-        'major' => 'Dancing'
-    ],
-    ];
+    $students = Student::select(['id', 'nis', 'name', 'class', 'major'])
+    
+    ->get();
     return view('students.index', [
         'title'=> $title,
         'students'=> $students
@@ -32,11 +19,15 @@ class StudentController extends Controller
 
     }
 
-    public function show(string$id)
+    public function show(Student $student)
     {
+        
+    
         $title = "Sistem Sekolah - Halaman Siswa";
+
         return view('students.show', [
-            'title'=> $title
+            'title'=> $title,
+            'student' => $student
         ]);
         
     }
@@ -50,27 +41,38 @@ class StudentController extends Controller
 
     }
 
-    public function edit(string$id)
+    public function edit(Student $student)
     {
         $title = "Sistem Sekolah - Edit Siswa";
         return view('students.edit', [
-            'title'=> $title
+            'title'=> $title,
+            'student' => $student
         ]);
     }
 
-    public function store ()
+    public function store (StoreRequest $request)
     {
-        return "Menambah data siswa baru";
+        $validatedRequest = $request->validated();
+
+        Student::create($validatedRequest);
+
+        return redirect()->route('students.index');
     }
 
-    public function update (string$id)
+    public function update (Student $student, UpdateRequest $request)
 
     {
-      return "Mengubah data siswa dengan ID: {$id}";
+      $validatedRequest = $request->validated();
+
+        $student->update($validatedRequest);
+
+        return redirect()->route('students.index');
     }
 
-    public function destroy (string $id)
+    public function destroy (Student $student)
     {
-        return "Menghapus data siswa dengan ID: {$id}";
+        $student->delete();
+
+        return redirect()->route('students.index');
     }
 }

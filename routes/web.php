@@ -21,18 +21,18 @@ Route::name('students.')->prefix('students')->group(function () {
 
     Route::get('/create', [StudentController::class, 'create'])->name('create');
 
-    Route::get('/{id}', [StudentController::class, 'show'])->name('show')->whereNumber('id');
+    Route::get('/{student}', [StudentController::class, 'show'])->name('show')->whereNumber('id');
 
 
-    Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit')->whereNumber('id');
+    Route::get('/{student}/edit', [StudentController::class, 'edit'])->name('edit')->whereNumber('id');
 
 
     Route::post('/', [StudentController::class, 'store'])->name('store');
 
-    Route::put('/{id}', [StudentController::class, 'update'])->name('update')->whereNumber('id');
+    Route::put('/{student}', [StudentController::class, 'update'])->name('update')->whereNumber('id');
 
 
-    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy')->whereNumber('id');
+    Route::delete('/{student}', [StudentController::class, 'destroy'])->name('destroy')->whereNumber('id');
 
 
 
